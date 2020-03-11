@@ -219,24 +219,17 @@ namespace Biking
                 dataGridView1.Rows[i].Cells[4].Value = false;
             }
         }
-
+        
         private void RemoveFromData2BTN_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            for (int i = dataGridView2.Rows.Count - 1; i >= 0; i--)
             {
-                bool checkedField = false;
-                var val1 = row.Cells[4].Value == null ? String.Empty : row.Cells[4].Value.ToString();
+                var val1 = dataGridView2.Rows[i].Cells[4].Value == null ? String.Empty : dataGridView2.Rows[i].Cells[4].Value.ToString();
                 if (val1 == "True" && val1 != String.Empty)
                 {
-                    checkedField = true;
+                    dataGridView2.Rows.RemoveAt(i);
                 }
-                if (checkedField)
-                {
-                    dataGridView2.Rows.Remove(row);
-                    checkedField = false;
-                } 
             }
-
         }
 
         private void SelectALLData1BTN_Click(object sender, EventArgs e)
