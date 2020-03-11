@@ -1,0 +1,9 @@
+			**ISTRUZIONI**
+
+Nel caso perdessi la memoria per il Vairus...
+
+1) Scaricare il database access ( BikingCorrect.accdb) 
+2) Scaricare la cartella contenente l'applicativo ( BikingLastVersion )
+
+3) Copiare il percorso dove si è inserito BikingCorrect e sostituire la stringa di connessione al file access.
+
