@@ -57,9 +57,9 @@ namespace Biking
                 Name = "NomeGara",
                 HeaderText = "Nome Gara"
             };
-            DataGridViewColumn codiceFCIATLETA = new DataGridViewColumn
+            DataGridViewColumn CodiceFCI = new DataGridViewColumn
             {
-                Name = "CodiceFCIATLETA",
+                Name = "CodiceFCI",
                 HeaderText = "Codice FCI"
             };
             DataGridViewColumn nomeTesserato = new DataGridViewColumn
@@ -79,13 +79,13 @@ namespace Biking
             };
 
             nomeGara.CellTemplate = new DataGridViewTextBoxCell();
-            codiceFCIATLETA.CellTemplate = new DataGridViewTextBoxCell();
+            CodiceFCI.CellTemplate = new DataGridViewTextBoxCell();
             nomeTesserato.CellTemplate = new DataGridViewTextBoxCell();
             categoria.CellTemplate = new DataGridViewTextBoxCell();
             booleanRemove.CellTemplate = new DataGridViewCheckBoxCell();
 
             dataGridView2.Columns.Add(nomeGara);
-            dataGridView2.Columns.Add(codiceFCIATLETA);
+            dataGridView2.Columns.Add(CodiceFCI);
             dataGridView2.Columns.Add(nomeTesserato);
             dataGridView2.Columns.Add(categoria);
             dataGridView2.Columns.Add(booleanRemove);
@@ -115,17 +115,17 @@ namespace Biking
                 if (nomeGara != "" && categoria != "")
                 {
                     DataView dv = new DataView(res, $@"NomeGara = '{nomeGara}' AND Categoria = '{categoria}' ", "Categoria Desc", DataViewRowState.CurrentRows);
-                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCIATLETA", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
+                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCI", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
                 }
                 else if (nomeGara != "" && categoria == "")
                 {
                     DataView dv = new DataView(res, $@"NomeGara = '{nomeGara}'", "Categoria Desc", DataViewRowState.CurrentRows);
-                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCIATLETA", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
+                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCI", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
                 }
                 else if (nomeGara == "" && categoria != "")
                 {
                     DataView dv = new DataView(res, $@"Categoria = '{categoria}'", "Categoria Desc", DataViewRowState.CurrentRows);
-                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCIATLETA", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
+                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCI", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
                 }
             }
             else if (categoria == "" && nomeGara == "")
@@ -156,17 +156,17 @@ namespace Biking
                 if (categoria != "" && nomeGara != "")
                 {
                     DataView dv = new DataView(res, $@"Categoria = '{categoria}' AND NomeGara = '{nomeGara}' ", "Categoria Desc", DataViewRowState.CurrentRows);
-                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCIATLETA", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
+                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCI", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
                 }
                 else if (categoria != "" && nomeGara == "")
                 {
                     DataView dv = new DataView(res, $@"Categoria = '{categoria}'", "Categoria Desc", DataViewRowState.CurrentRows);
-                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCIATLETA", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
+                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCI", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
                 }
                 else if (categoria == "" && nomeGara != "")
                 {
                     DataView dv = new DataView(res, $@"NomeGara = '{nomeGara}'", "Categoria Desc", DataViewRowState.CurrentRows);
-                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCIATLETA", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
+                    dataGridView1.DataSource = dv.ToTable(false, "NomeGara", "CodiceFCI", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
                 }
             }
             else if (categoria == "" && nomeGara == "")
@@ -185,7 +185,7 @@ namespace Biking
             if (textBoxNome != "")
             {
                 DataView dv3 = new DataView(res, $@"NomeTesserato LIKE '%{textBoxNome}%'", "NomeTesserato Desc", DataViewRowState.CurrentRows);
-                dataGridView1.DataSource = dv3.ToTable(false, "NomeGara", "CodiceFCIATLETA", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
+                dataGridView1.DataSource = dv3.ToTable(false, "NomeGara", "CodiceFCI", "NomeTesserato", "Categoria", "Seleziona Atleta per la Prova");
             }
         }
 
@@ -196,7 +196,7 @@ namespace Biking
 
             OleDbConnection conn = new OleDbConnection(accessOperations._accessConnectionString1);
 
-            OleDbCommand cmd1 = new OleDbCommand("SELECT GaraATLETA.NomeGara, GaraATLETA.CodiceFCIATLETA, GaraATLETA.Categoria, Runner.NomeTesserato FROM Runner INNER JOIN GaraATLETA ON Runner.[CodiceFCI] = GaraATLETA.[CodiceFCIATLETA]; ", conn);
+            OleDbCommand cmd1 = new OleDbCommand("SELECT GaraATLETA.NomeGara, Runner.CodiceFCI, Runner.Categoria, Runner.NomeTesserato FROM Runner INNER JOIN GaraATLETA ON Runner.[CodiceFCI] = GaraATLETA.[CodiceFCIATLETA]; ", conn);
 
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd1);
 

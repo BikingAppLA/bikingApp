@@ -78,6 +78,7 @@ namespace Biking
             dataGridView2.Columns.Add(fciCol);
             dataGridView2.Columns.Add(catCol);
             dataGridView2.Columns.Add(dorsalCol);
+            
         }
 
         private void ReturnBtn_Click(object sender, EventArgs e)
@@ -95,6 +96,7 @@ namespace Biking
             dataGridView1.DataSource = dv.ToTable(false, "NomeTesserato", "CodiceFCI", "Categoria", "NomeSocieta", "CodiceFiscale", "DorsaleNumero");
             this.dataGridView1.Columns["CodiceFiscale"].Visible = false;
             this.dataGridView1.Columns["NomeSocieta"].Visible = false;
+            this.dataGridView1.Columns["DorsaleNumero"].Visible = false;
             DataGridViewButtonColumn dataGridViewButtonColumn = new DataGridViewButtonColumn
             {
                 Name = "AddButton",
@@ -169,6 +171,7 @@ namespace Biking
         //SAVES RECORDS IN GARA ATLETA TBL
         private void SaveButton_Click(object sender, EventArgs e)
         {
+
             string nomeGara = GaraNameTextBox.Text == null ? String.Empty : GaraNameTextBox.Text.ToString();
             string categoria = CategoriaComboBoxFilter.SelectedItem == null ? string.Empty : CategoriaComboBoxFilter.SelectedItem.ToString();
             try
@@ -194,7 +197,7 @@ namespace Biking
                     " (@nomeGara, @codiceFCI, @categoria)";
 
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@nomeGara", nomeGara ?? "");
+                    cmd.Parameters.AddWithValue("@nomeGara", nomeGara);
                     cmd.Parameters.AddWithValue("@codiceFCI", dataGridView2.Rows[i].Cells[2].Value.ToString());
                     cmd.Parameters.AddWithValue("@categoria", categoria);
 
@@ -207,7 +210,7 @@ namespace Biking
                 DataTable listaGare = accessOperations.GetGaraTable(_table1);
                 if (listaGare.Rows.Count == 0)
                 {
-                    cmd1.CommandText = @"INSERT INTO [Gara]([Nome]) VALUES ( @nomeGara);";
+                    cmd1.CommandText = @"INSERT INTO [Gara]([NomeGara]) VALUES ( @nomeGara);";
                     cmd1.Parameters.AddWithValue("@nomeGara", nomeGara);
                     cmd1.ExecuteNonQuery();
                 }
@@ -226,7 +229,7 @@ namespace Biking
                     }
                     if (!alreadyPresent)
                     {
-                        cmd1.CommandText = @"INSERT INTO [Gara]([Nome]) VALUES ( @nomeGara);";
+                        cmd1.CommandText = @"INSERT INTO [Gara]([NomeGara]) VALUES ( @nomeGara);";
                         cmd1.Parameters.AddWithValue("@nomeGara", GaraNameTextBox.Text.ToString());
                         cmd1.ExecuteNonQuery();
                     }
