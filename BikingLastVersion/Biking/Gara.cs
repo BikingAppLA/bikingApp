@@ -16,9 +16,8 @@ namespace Biking
         static AccessOperations accessOperations = new AccessOperations();
 
         public static DataTable _table = new DataTable();
-
+        public static DataTable _table1 = new DataTable();
         public string filterCboBox1;
-
         DataTable dataTableCurrent = accessOperations.GetAccessTable(_table);
 
         public Gara(DataTable dt)
@@ -181,6 +180,11 @@ namespace Biking
                     Connection = _conn,
                     CommandType = CommandType.Text
                 };
+                OleDbCommand cmd1 = new OleDbCommand
+                {
+                    Connection = _conn,
+                    CommandType = CommandType.Text
+                };
 
                 _conn.Open();
 
@@ -193,9 +197,41 @@ namespace Biking
                     cmd.Parameters.AddWithValue("@nomeGara", nomeGara ?? "");
                     cmd.Parameters.AddWithValue("@codiceFCI", dataGridView2.Rows[i].Cells[2].Value.ToString());
                     cmd.Parameters.AddWithValue("@categoria", categoria);
-                  
+
                     cmd.ExecuteNonQuery();
+
                 }
+
+                //ADD nomegara to Gara Table if it isn't already present
+
+                DataTable listaGare = accessOperations.GetGaraTable(_table1);
+                if (listaGare.Rows.Count == 0)
+                {
+                    cmd1.CommandText = @"INSERT INTO [Gara]([Nome]) VALUES ( @nomeGara);";
+                    cmd1.Parameters.AddWithValue("@nomeGara", nomeGara);
+                    cmd1.ExecuteNonQuery();
+                }
+                else if (listaGare.Rows.Count > 0)
+                {
+                    bool alreadyPresent = false;
+                    foreach (DataRow row in listaGare.Rows)
+                    {
+                        var nomeGara1 = GaraNameTextBox.Text.ToString() ?? String.Empty;
+                        var nomeGaraInsideDB = row.ItemArray[1].ToString();
+                        if (nomeGara1 == nomeGaraInsideDB && nomeGara1 != "")
+                        {
+                            alreadyPresent = true;
+                            break;
+                        }
+                    }
+                    if (!alreadyPresent)
+                    {
+                        cmd1.CommandText = @"INSERT INTO [Gara]([Nome]) VALUES ( @nomeGara);";
+                        cmd1.Parameters.AddWithValue("@nomeGara", GaraNameTextBox.Text.ToString());
+                        cmd1.ExecuteNonQuery();
+                    }
+                }
+
                 _conn.Close();
                 string message = "Lista di gara importata con successo!";
                 MessageBox.Show(message);

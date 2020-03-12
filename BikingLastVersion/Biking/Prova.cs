@@ -25,9 +25,11 @@ namespace Biking
             InitializeComponent();
 
             //Add items to Combobox NomeGara
-            for (int i = 0; i < listaGare.Rows.Count; i++)
+            DataTable dt = new DataTable();
+            DataTable listaNomiGare = accessOperations.GetGaraTable(dt);
+            for (int i = 0; i < listaNomiGare.Rows.Count; i++)
             {
-                var val = listaGare.Rows[i].ItemArray.GetValue(1);
+                var val = listaNomiGare.Rows[i].ItemArray.GetValue(1);
 
                 if (!NomeGaraComboBox.Items.Contains(val))
                 {
