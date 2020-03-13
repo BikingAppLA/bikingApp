@@ -93,6 +93,18 @@
     <Compile Include="Gara.Designer.cs">
       <DependentUpon>Gara.cs</DependentUpon>
     </Compile>
+    <Compile Include="RunnerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RunnerList.Designer.cs">
+      <DependentUpon>RunnerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Team.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Team.Designer.cs">
+      <DependentUpon>Team.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +129,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gara.resx">
       <DependentUpon>Gara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RunnerList.resx">
+      <DependentUpon>RunnerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Team.resx">
+      <DependentUpon>Team.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

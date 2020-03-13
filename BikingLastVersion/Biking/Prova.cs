@@ -208,6 +208,7 @@ namespace Biking
             return dt;
         }
 
+        #region Data Transfer between datagrids
         private void TransferToData2BTN_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -221,7 +222,7 @@ namespace Biking
                 dataGridView1.Rows[i].Cells[4].Value = false;
             }
         }
-        
+
         private void RemoveFromData2BTN_Click(object sender, EventArgs e)
         {
             for (int i = dataGridView2.Rows.Count - 1; i >= 0; i--)
@@ -272,6 +273,26 @@ namespace Biking
             {
                 throw new Exception("" + ex);
             }
+        }
+        #endregion
+
+        private void SaveProvaBTN_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AddTeamBTN_Click(object sender, EventArgs e)
+        {
+            Team teamForm = new Team(  );
+            teamForm.FormClosed += new FormClosedEventHandler(TeamForm_FormClosed);
+            this.Hide();
+            teamForm.ShowDialog();
+        }
+
+        void TeamForm_FormClosed (object sender, FormClosedEventArgs e)
+        {
+
+            this.Show();
         }
     }
 }

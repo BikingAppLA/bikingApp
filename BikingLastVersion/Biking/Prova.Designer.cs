@@ -49,6 +49,8 @@
             this.RemoveFromData2BTN = new System.Windows.Forms.Button();
             this.SelectALLGrid1BTN = new System.Windows.Forms.Button();
             this.SelectALLGrid2BTN = new System.Windows.Forms.Button();
+            this.SaveProvaBTN = new System.Windows.Forms.Button();
+            this.AddTeamBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -57,9 +59,9 @@
             // 
             this.ReturnButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ReturnButon.ForeColor = System.Drawing.Color.Black;
-            this.ReturnButon.Location = new System.Drawing.Point(545, 33);
+            this.ReturnButon.Location = new System.Drawing.Point(1206, 61);
             this.ReturnButon.Name = "ReturnButon";
-            this.ReturnButon.Size = new System.Drawing.Size(97, 39);
+            this.ReturnButon.Size = new System.Drawing.Size(101, 49);
             this.ReturnButon.TabIndex = 204;
             this.ReturnButon.Text = "CANCELLA";
             this.ReturnButon.UseVisualStyleBackColor = false;
@@ -163,7 +165,7 @@
             // 
             this.MostraTuttiButton.BackColor = System.Drawing.Color.White;
             this.MostraTuttiButton.ForeColor = System.Drawing.Color.Black;
-            this.MostraTuttiButton.Location = new System.Drawing.Point(450, 33);
+            this.MostraTuttiButton.Location = new System.Drawing.Point(449, 33);
             this.MostraTuttiButton.Name = "MostraTuttiButton";
             this.MostraTuttiButton.Size = new System.Drawing.Size(82, 39);
             this.MostraTuttiButton.TabIndex = 223;
@@ -222,7 +224,7 @@
             // 
             this.SelectALLGrid1BTN.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SelectALLGrid1BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectALLGrid1BTN.Location = new System.Drawing.Point(503, 495);
+            this.SelectALLGrid1BTN.Location = new System.Drawing.Point(503, 496);
             this.SelectALLGrid1BTN.Name = "SelectALLGrid1BTN";
             this.SelectALLGrid1BTN.Size = new System.Drawing.Size(124, 32);
             this.SelectALLGrid1BTN.TabIndex = 227;
@@ -234,7 +236,7 @@
             // 
             this.SelectALLGrid2BTN.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SelectALLGrid2BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectALLGrid2BTN.Location = new System.Drawing.Point(729, 495);
+            this.SelectALLGrid2BTN.Location = new System.Drawing.Point(729, 496);
             this.SelectALLGrid2BTN.Name = "SelectALLGrid2BTN";
             this.SelectALLGrid2BTN.Size = new System.Drawing.Size(122, 32);
             this.SelectALLGrid2BTN.TabIndex = 228;
@@ -242,12 +244,40 @@
             this.SelectALLGrid2BTN.UseVisualStyleBackColor = false;
             this.SelectALLGrid2BTN.Click += new System.EventHandler(this.SelectALLGrid2BTN_Click);
             // 
+            // SaveProvaBTN
+            // 
+            this.SaveProvaBTN.BackColor = System.Drawing.Color.GreenYellow;
+            this.SaveProvaBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveProvaBTN.ForeColor = System.Drawing.Color.Black;
+            this.SaveProvaBTN.Location = new System.Drawing.Point(965, 68);
+            this.SaveProvaBTN.Name = "SaveProvaBTN";
+            this.SaveProvaBTN.Size = new System.Drawing.Size(137, 49);
+            this.SaveProvaBTN.TabIndex = 229;
+            this.SaveProvaBTN.Text = "Salva Prova";
+            this.SaveProvaBTN.UseVisualStyleBackColor = false;
+            this.SaveProvaBTN.Click += new System.EventHandler(this.SaveProvaBTN_Click);
+            // 
+            // AddTeamBTN
+            // 
+            this.AddTeamBTN.BackColor = System.Drawing.Color.Aqua;
+            this.AddTeamBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddTeamBTN.ForeColor = System.Drawing.Color.Black;
+            this.AddTeamBTN.Location = new System.Drawing.Point(889, 496);
+            this.AddTeamBTN.Name = "AddTeamBTN";
+            this.AddTeamBTN.Size = new System.Drawing.Size(119, 53);
+            this.AddTeamBTN.TabIndex = 230;
+            this.AddTeamBTN.Text = "CREA TEAM";
+            this.AddTeamBTN.UseVisualStyleBackColor = false;
+            this.AddTeamBTN.Click += new System.EventHandler(this.AddTeamBTN_Click);
+            // 
             // Prova
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1339, 613);
+            this.Controls.Add(this.AddTeamBTN);
+            this.Controls.Add(this.SaveProvaBTN);
             this.Controls.Add(this.SelectALLGrid2BTN);
             this.Controls.Add(this.SelectALLGrid1BTN);
             this.Controls.Add(this.RemoveFromData2BTN);
@@ -291,5 +321,7 @@
         private System.Windows.Forms.Button SelectALLGrid1BTN;
         private System.Windows.Forms.Button SelectALLGrid2BTN;
         public System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button SaveProvaBTN;
+        private System.Windows.Forms.Button AddTeamBTN;
     }
 }

@@ -171,7 +171,6 @@ namespace Biking
         //SAVES RECORDS IN GARA ATLETA TBL
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
             string nomeGara = GaraNameTextBox.Text == null ? String.Empty : GaraNameTextBox.Text.ToString();
             string categoria = CategoriaComboBoxFilter.SelectedItem == null ? string.Empty : CategoriaComboBoxFilter.SelectedItem.ToString();
             try
@@ -202,10 +201,9 @@ namespace Biking
                     cmd.Parameters.AddWithValue("@categoria", categoria);
 
                     cmd.ExecuteNonQuery();
-
                 }
 
-                //ADD nomegara to Gara Table if it isn't already present
+        //    AND.....   ADD nomegara to Gara Table if it isn't already present
 
                 DataTable listaGare = accessOperations.GetGaraTable(_table1);
                 if (listaGare.Rows.Count == 0)

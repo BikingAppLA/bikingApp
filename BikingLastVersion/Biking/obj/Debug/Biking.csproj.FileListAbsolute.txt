@@ -143,3 +143,7 @@ C:\Users\antonelli_lorenzo\source\repos\BikingLastVersion\LastVersionBIKING\Biki
 C:\Users\antonelli_lorenzo\source\repos\BikingLastVersion\LastVersionBIKING\Biking\obj\Debug\Biking.csproj.CopyComplete
 C:\Users\antonelli_lorenzo\source\repos\BikingLastVersion\LastVersionBIKING\Biking\obj\Debug\Biking.exe
 C:\Users\antonelli_lorenzo\source\repos\BikingLastVersion\LastVersionBIKING\Biking\obj\Debug\Biking.pdb
+C:\Users\antonelli_lorenzo\source\repos\BikingLastVersion\LastVersionBIKING\Biking\obj\Debug\Biking.Team.resources
+C:\Users\antonelli_lorenzo\source\repos\BikingLastVersion\LastVersionBIKING\Biking\obj\Debug\Biking.RunnerList.resources
+C:\Users\antonelli_lorenzo\source\repos\BIKING_REPO\BikingREPO\bikingApp\BikingLastVersion\Biking\obj\Debug\Biking.RunnerList.resources
+C:\Users\antonelli_lorenzo\source\repos\BIKING_REPO\BikingREPO\bikingApp\BikingLastVersion\Biking\obj\Debug\Biking.Team.resources

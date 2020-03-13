@@ -67,6 +67,22 @@ namespace Biking
             return dataTable;
         }
 
+        public DataTable GetTeamTable(DataTable dataTable)
+        {
+            OleDbConnection conn = new OleDbConnection(_accessConnectionString1);
+
+            OleDbCommand cmd1 = new OleDbCommand("SELECT * FROM [Team]", conn);
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd1);
+
+            conn.Open();
+            dataTable.Clear();
+            adapter.Fill(dataTable);
+            conn.Close();
+
+            return dataTable;
+        }
+
         public void ClearRunner()
         {
 
