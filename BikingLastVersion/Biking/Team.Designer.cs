@@ -35,14 +35,18 @@
             this.Runner2 = new System.Windows.Forms.Label();
             this.Runner3 = new System.Windows.Forms.Label();
             this.Runner4 = new System.Windows.Forms.Label();
-            this.Nome1Team1 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Nome1Team = new System.Windows.Forms.TextBox();
+            this.Nome2Team = new System.Windows.Forms.TextBox();
+            this.Nome3Team = new System.Windows.Forms.TextBox();
+            this.Nome4Team = new System.Windows.Forms.TextBox();
             this.CodiceFCI1 = new System.Windows.Forms.TextBox();
             this.CodiceFCI2 = new System.Windows.Forms.TextBox();
             this.CodiceFCI3 = new System.Windows.Forms.TextBox();
             this.CodiceFCI4 = new System.Windows.Forms.TextBox();
+            this.Reset1Button = new System.Windows.Forms.Button();
+            this.Reset2Button = new System.Windows.Forms.Button();
+            this.Reset3Button = new System.Windows.Forms.Button();
+            this.Reset4Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NomeTeamLabel
@@ -98,6 +102,7 @@
             this.Runner2.TabIndex = 225;
             this.Runner2.Text = "Atleta 2";
             this.Runner2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Runner2.Click += new System.EventHandler(this.Runner2_Click);
             // 
             // Runner3
             // 
@@ -109,6 +114,7 @@
             this.Runner3.TabIndex = 226;
             this.Runner3.Text = "Atleta 3";
             this.Runner3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Runner3.Click += new System.EventHandler(this.Runner3_Click);
             // 
             // Runner4
             // 
@@ -120,42 +126,43 @@
             this.Runner4.TabIndex = 227;
             this.Runner4.Text = "Atleta 4";
             this.Runner4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Runner4.Click += new System.EventHandler(this.Runner4_Click);
             // 
-            // Nome1Team1
+            // Nome1Team
             // 
-            this.Nome1Team1.Enabled = false;
-            this.Nome1Team1.Location = new System.Drawing.Point(174, 128);
-            this.Nome1Team1.Name = "Nome1Team1";
-            this.Nome1Team1.Size = new System.Drawing.Size(131, 20);
-            this.Nome1Team1.TabIndex = 228;
-            this.Nome1Team1.Text = "Nome";
+            this.Nome1Team.Enabled = false;
+            this.Nome1Team.Location = new System.Drawing.Point(174, 128);
+            this.Nome1Team.Name = "Nome1Team";
+            this.Nome1Team.Size = new System.Drawing.Size(131, 20);
+            this.Nome1Team.TabIndex = 228;
+            this.Nome1Team.Text = "Nome";
             // 
-            // textBox1
+            // Nome2Team
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(174, 190);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 229;
-            this.textBox1.Text = "Nome";
+            this.Nome2Team.Enabled = false;
+            this.Nome2Team.Location = new System.Drawing.Point(174, 190);
+            this.Nome2Team.Name = "Nome2Team";
+            this.Nome2Team.Size = new System.Drawing.Size(131, 20);
+            this.Nome2Team.TabIndex = 229;
+            this.Nome2Team.Text = "Nome";
             // 
-            // textBox2
+            // Nome3Team
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(174, 244);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 20);
-            this.textBox2.TabIndex = 230;
-            this.textBox2.Text = "Nome";
+            this.Nome3Team.Enabled = false;
+            this.Nome3Team.Location = new System.Drawing.Point(174, 244);
+            this.Nome3Team.Name = "Nome3Team";
+            this.Nome3Team.Size = new System.Drawing.Size(131, 20);
+            this.Nome3Team.TabIndex = 230;
+            this.Nome3Team.Text = "Nome";
             // 
-            // textBox3
+            // Nome4Team
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(174, 293);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(131, 20);
-            this.textBox3.TabIndex = 231;
-            this.textBox3.Text = "Nome";
+            this.Nome4Team.Enabled = false;
+            this.Nome4Team.Location = new System.Drawing.Point(174, 293);
+            this.Nome4Team.Name = "Nome4Team";
+            this.Nome4Team.Size = new System.Drawing.Size(131, 20);
+            this.Nome4Team.TabIndex = 231;
+            this.Nome4Team.Text = "Nome";
             // 
             // CodiceFCI1
             // 
@@ -193,19 +200,63 @@
             this.CodiceFCI4.TabIndex = 235;
             this.CodiceFCI4.Text = "CodiceFCI";
             // 
+            // Reset1Button
+            // 
+            this.Reset1Button.Location = new System.Drawing.Point(454, 128);
+            this.Reset1Button.Name = "Reset1Button";
+            this.Reset1Button.Size = new System.Drawing.Size(75, 20);
+            this.Reset1Button.TabIndex = 236;
+            this.Reset1Button.Text = "Reset";
+            this.Reset1Button.UseVisualStyleBackColor = true;
+            this.Reset1Button.Click += new System.EventHandler(this.Reset1Button_Click);
+            // 
+            // Reset2Button
+            // 
+            this.Reset2Button.Location = new System.Drawing.Point(454, 190);
+            this.Reset2Button.Name = "Reset2Button";
+            this.Reset2Button.Size = new System.Drawing.Size(75, 20);
+            this.Reset2Button.TabIndex = 237;
+            this.Reset2Button.Text = "Reset";
+            this.Reset2Button.UseVisualStyleBackColor = true;
+            this.Reset2Button.Click += new System.EventHandler(this.Reset2Button_Click);
+            // 
+            // Reset3Button
+            // 
+            this.Reset3Button.Location = new System.Drawing.Point(454, 244);
+            this.Reset3Button.Name = "Reset3Button";
+            this.Reset3Button.Size = new System.Drawing.Size(75, 20);
+            this.Reset3Button.TabIndex = 238;
+            this.Reset3Button.Text = "Reset";
+            this.Reset3Button.UseVisualStyleBackColor = true;
+            this.Reset3Button.Click += new System.EventHandler(this.Reset3Button_Click);
+            // 
+            // Reset4Button
+            // 
+            this.Reset4Button.Location = new System.Drawing.Point(454, 293);
+            this.Reset4Button.Name = "Reset4Button";
+            this.Reset4Button.Size = new System.Drawing.Size(75, 20);
+            this.Reset4Button.TabIndex = 239;
+            this.Reset4Button.Text = "Reset";
+            this.Reset4Button.UseVisualStyleBackColor = true;
+            this.Reset4Button.Click += new System.EventHandler(this.Reset4Button_Click);
+            // 
             // Team
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 608);
+            this.Controls.Add(this.Reset4Button);
+            this.Controls.Add(this.Reset3Button);
+            this.Controls.Add(this.Reset2Button);
+            this.Controls.Add(this.Reset1Button);
             this.Controls.Add(this.CodiceFCI4);
             this.Controls.Add(this.CodiceFCI3);
             this.Controls.Add(this.CodiceFCI2);
             this.Controls.Add(this.CodiceFCI1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Nome1Team1);
+            this.Controls.Add(this.Nome4Team);
+            this.Controls.Add(this.Nome3Team);
+            this.Controls.Add(this.Nome2Team);
+            this.Controls.Add(this.Nome1Team);
             this.Controls.Add(this.Runner4);
             this.Controls.Add(this.Runner3);
             this.Controls.Add(this.Runner2);
@@ -229,13 +280,17 @@
         private System.Windows.Forms.Label Runner2;
         private System.Windows.Forms.Label Runner3;
         private System.Windows.Forms.Label Runner4;
-        public System.Windows.Forms.TextBox Nome1Team1;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.TextBox textBox2;
-        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox Nome1Team;
+        public System.Windows.Forms.TextBox Nome2Team;
+        public System.Windows.Forms.TextBox Nome3Team;
+        public System.Windows.Forms.TextBox Nome4Team;
         public System.Windows.Forms.TextBox CodiceFCI1;
         public System.Windows.Forms.TextBox CodiceFCI2;
         public System.Windows.Forms.TextBox CodiceFCI3;
         public System.Windows.Forms.TextBox CodiceFCI4;
+        private System.Windows.Forms.Button Reset1Button;
+        private System.Windows.Forms.Button Reset2Button;
+        private System.Windows.Forms.Button Reset3Button;
+        private System.Windows.Forms.Button Reset4Button;
     }
 }

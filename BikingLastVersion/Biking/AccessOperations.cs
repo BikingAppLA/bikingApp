@@ -16,7 +16,7 @@ namespace Biking
         readonly ExcelOperations exc = new ExcelOperations();
 
         //CHANGE THIS _accessConnectionString1 on Data Source= *current directory of the access database*
-        public string _accessConnectionString1 = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\antonelli_lorenzo\source\repos\BIKING_REPO\BikingREPO\bikingApp\BikingCorrect.accdb;";
+        public string _accessConnectionString1 = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\antonelli_lorenzo\source\repos\BikingCorrect.accdb;";
 
         public DataTable GetAccessTable(DataTable accessTbl)
         {

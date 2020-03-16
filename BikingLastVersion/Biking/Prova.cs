@@ -291,7 +291,6 @@ namespace Biking
 
         void TeamForm_FormClosed (object sender, FormClosedEventArgs e)
         {
-
             this.Show();
         }
     }
