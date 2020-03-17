@@ -47,6 +47,9 @@
             this.Reset2Button = new System.Windows.Forms.Button();
             this.Reset3Button = new System.Windows.Forms.Button();
             this.Reset4Button = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.CategoriaLabel = new System.Windows.Forms.Label();
+            this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // NomeTeamLabel
@@ -202,7 +205,7 @@
             // 
             // Reset1Button
             // 
-            this.Reset1Button.Location = new System.Drawing.Point(454, 128);
+            this.Reset1Button.Location = new System.Drawing.Point(461, 128);
             this.Reset1Button.Name = "Reset1Button";
             this.Reset1Button.Size = new System.Drawing.Size(75, 20);
             this.Reset1Button.TabIndex = 236;
@@ -212,7 +215,7 @@
             // 
             // Reset2Button
             // 
-            this.Reset2Button.Location = new System.Drawing.Point(454, 190);
+            this.Reset2Button.Location = new System.Drawing.Point(461, 190);
             this.Reset2Button.Name = "Reset2Button";
             this.Reset2Button.Size = new System.Drawing.Size(75, 20);
             this.Reset2Button.TabIndex = 237;
@@ -222,7 +225,7 @@
             // 
             // Reset3Button
             // 
-            this.Reset3Button.Location = new System.Drawing.Point(454, 244);
+            this.Reset3Button.Location = new System.Drawing.Point(461, 244);
             this.Reset3Button.Name = "Reset3Button";
             this.Reset3Button.Size = new System.Drawing.Size(75, 20);
             this.Reset3Button.TabIndex = 238;
@@ -232,7 +235,7 @@
             // 
             // Reset4Button
             // 
-            this.Reset4Button.Location = new System.Drawing.Point(454, 293);
+            this.Reset4Button.Location = new System.Drawing.Point(461, 293);
             this.Reset4Button.Name = "Reset4Button";
             this.Reset4Button.Size = new System.Drawing.Size(75, 20);
             this.Reset4Button.TabIndex = 239;
@@ -240,11 +243,45 @@
             this.Reset4Button.UseVisualStyleBackColor = true;
             this.Reset4Button.Click += new System.EventHandler(this.Reset4Button_Click);
             // 
+            // SaveButton
+            // 
+            this.SaveButton.BackColor = System.Drawing.Color.PaleGreen;
+            this.SaveButton.Location = new System.Drawing.Point(174, 493);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(169, 53);
+            this.SaveButton.TabIndex = 240;
+            this.SaveButton.Text = "Salva Team";
+            this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // CategoriaLabel
+            // 
+            this.CategoriaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CategoriaLabel.ForeColor = System.Drawing.Color.Black;
+            this.CategoriaLabel.Location = new System.Drawing.Point(323, 51);
+            this.CategoriaLabel.Name = "CategoriaLabel";
+            this.CategoriaLabel.Size = new System.Drawing.Size(91, 20);
+            this.CategoriaLabel.TabIndex = 241;
+            this.CategoriaLabel.Text = "Categoria";
+            this.CategoriaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CategoriaComboBox
+            // 
+            this.CategoriaComboBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.CategoriaComboBox.FormattingEnabled = true;
+            this.CategoriaComboBox.Location = new System.Drawing.Point(433, 51);
+            this.CategoriaComboBox.Name = "CategoriaComboBox";
+            this.CategoriaComboBox.Size = new System.Drawing.Size(103, 21);
+            this.CategoriaComboBox.TabIndex = 242;
+            // 
             // Team
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(793, 608);
+            this.Controls.Add(this.CategoriaComboBox);
+            this.Controls.Add(this.CategoriaLabel);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.Reset4Button);
             this.Controls.Add(this.Reset3Button);
             this.Controls.Add(this.Reset2Button);
@@ -292,5 +329,8 @@
         private System.Windows.Forms.Button Reset2Button;
         private System.Windows.Forms.Button Reset3Button;
         private System.Windows.Forms.Button Reset4Button;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Label CategoriaLabel;
+        private System.Windows.Forms.ComboBox CategoriaComboBox;
     }
 }

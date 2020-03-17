@@ -37,18 +37,20 @@ namespace Biking
             };
             try
             {
-            cmd.CommandText = @"INSERT INTO [Runner] ([IdGara], [NomeGara], [DorsaleNumero], [NomeTesserato], [CodiceFCI], [Categoria], " +
-                "[CodiceUci], [Nazionalità], [DataNascita], [NomeSocieta], [CodiceSocieta], [CodiceFiscale], [Sesso],[Note], [Cognome], [Nome], " +
-                "[Riserva], [Tempo], [Punti]) " +
-                "VALUES (@IdGara, @NomeGara, @DorsaleNumero, @NomeTesserato, @CodiceFCI, @Categoria, @CodiceUci, @Nazionalità, " +
-                "@DataNascita, @NomeSocieta, @CodiceSocieta, @CodiceFiscale, @Sesso, @Note, @Cognome, @Nome, @Riserva, @Tempo, @Punti)";
+                cmd.CommandText = @"INSERT INTO [Runner] ([IdGara], [NomeGara], [DorsaleNumero], [NomeTesserato], [CodiceFCI], [Categoria], " +
+                    "[CodiceUci], [Nazionalità], [DataNascita], [NomeSocieta], [CodiceSocieta], [CodiceFiscale], [Sesso],[Note], [Cognome], [Nome], " +
+                    "[Riserva], [Tempo], [Punti]) " +
+                    "VALUES (@IdGara, @NomeGara, @DorsaleNumero, @NomeTesserato, @CodiceFCI, @Categoria, @CodiceUci, @Nazionalità, " +
+                    "@DataNascita, @NomeSocieta, @CodiceSocieta, @CodiceFiscale, @Sesso, @Note, @Cognome, @Nome, @Riserva, @Tempo, @Punti)";
 
-            conn.Open();
+                conn.Open();
             }
+
             catch (Exception ex)
             {
-                throw new Exception("ERRORE:    "+ex);
+                throw new Exception("ERRORE:    " + ex);
             }
+
             try
             {
                 #region parameters
@@ -100,7 +102,6 @@ namespace Biking
 
             catch (Exception ex)
             {
-
                 throw new Exception("DOVE XE BUGO? .... :" + ex);
             }
             this.Close();
