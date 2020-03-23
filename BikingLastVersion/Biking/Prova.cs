@@ -20,6 +20,7 @@ namespace Biking
         public static DataTable _table3 = new DataTable();
         DataTable listaGare = accessOperations.GetGaraAtletaTable(_table1);
         DataTable listaAtleti = accessOperations.GetAccessTable(_table2);
+
         DataGridViewColumn minutes = new DataGridViewColumn
         {
             Name = "Minuti",
@@ -69,6 +70,8 @@ namespace Biking
             CellTemplate = new DataGridViewCheckBoxCell()
         };
 
+
+
         public Prova()
         {
             InitializeComponent();
@@ -99,10 +102,49 @@ namespace Biking
                     CategoriaComboBox.Items.Add(val);
                 }
             }
-            CategoriaComboBox.Items.Add(emptyItem);   }
+            CategoriaComboBox.Items.Add(emptyItem);
 
 
-        //Close this form(showdialog) and return to the precedent
+            DataGridViewColumn nomeGara = new DataGridViewColumn
+            {
+                Name = "NomeGara",
+                HeaderText = "Nome Gara"
+            };
+            DataGridViewColumn CodiceFCI = new DataGridViewColumn
+            {
+                Name = "CodiceFCI",
+                HeaderText = "Codice FCI"
+            };
+            DataGridViewColumn nomeTesserato = new DataGridViewColumn
+            {
+                Name = "NomeTesserato",
+                HeaderText = "Nome Tesserato"
+            };
+            DataGridViewColumn categoria = new DataGridViewColumn
+            {
+                Name = "Categoria",
+                HeaderText = "Categoria"
+            };
+            DataGridViewCheckBoxColumn booleanRemove = new DataGridViewCheckBoxColumn
+            {
+                Name = "Rimuovidallaista",
+                HeaderText = "Rimuovi Dalla Lista"
+            };
+
+            nomeGara.CellTemplate = new DataGridViewTextBoxCell();
+            CodiceFCI.CellTemplate = new DataGridViewTextBoxCell();
+            nomeTesserato.CellTemplate = new DataGridViewTextBoxCell();
+            categoria.CellTemplate = new DataGridViewTextBoxCell();
+            booleanRemove.CellTemplate = new DataGridViewCheckBoxCell();
+            dataGridView2.Columns.Add(nomeGara);
+            dataGridView2.Columns.Add(CodiceFCI);
+            dataGridView2.Columns.Add(nomeTesserato);
+            dataGridView2.Columns.Add(categoria);
+            dataGridView2.Columns.Add(booleanRemove);
+        }
+
+
+        //Close this form(showdialog) and return to the previous one
         private void ReturnButon_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -199,7 +241,7 @@ namespace Biking
             }
         }
 
-        //Method to fill a table already JOINED, ready for the datagridview
+        //Method to fill a table already JOINED with accessDB query, ready for the datagridview
         public DataTable GetJoinedTable(DataTable dt)
         {
             DataTable res = new DataTable();
@@ -288,76 +330,8 @@ namespace Biking
 
         private void SaveProvaBTN_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void AddTeamBTN_Click(object sender, EventArgs e)
-        {
-            Team teamForm = new Team(  );
-            teamForm.FormClosed += new FormClosedEventHandler(TeamForm_FormClosed);
-            this.Hide();
-            teamForm.ShowDialog();
-        }
-
-        void TeamForm_FormClosed (object sender, FormClosedEventArgs e)
-        {
-            this.Show();
-            //var tblTeam = accessOperations.GetTeamTable(_table3);
-            //dataGridView2.DataSource = tblTeam;
-            //dataGridView2.Columns.Add(minutes);
-            //dataGridView2.Columns.Add(seconds);
-            //dataGridView2.Columns.Add(cents);
-            //dataGridView2.Columns.Add(milliseconds);
-            //dataGridView2.Columns.Add(giri);
-            //dataGridView2.Columns.Add(km);
-            //dataGridView2.Columns.Add(punti);
-            //dataGridView2.Columns.Add(isLastProva);
-        }
-
-        private void AssegnPunteggiButton_Click(object sender, EventArgs e)
-        {
 
         }
 
-        private void SingleChoiceButton_Click(object sender, EventArgs e)
-        {
-
-            DataGridViewColumn nomeGara = new DataGridViewColumn
-            {
-                Name = "NomeGara",
-                HeaderText = "Nome Gara"
-            };
-            DataGridViewColumn CodiceFCI = new DataGridViewColumn
-            {
-                Name = "CodiceFCI",
-                HeaderText = "Codice FCI"
-            };
-            DataGridViewColumn nomeTesserato = new DataGridViewColumn
-            {
-                Name = "NomeTesserato",
-                HeaderText = "Nome Tesserato"
-            };
-            DataGridViewColumn categoria = new DataGridViewColumn
-            {
-                Name = "Categoria",
-                HeaderText = "Categoria"
-            };
-            DataGridViewCheckBoxColumn booleanRemove = new DataGridViewCheckBoxColumn
-            {
-                Name = "Rimuovidallaista",
-                HeaderText = "Rimuovi Dalla Lista"
-            };
-
-            nomeGara.CellTemplate = new DataGridViewTextBoxCell();
-            CodiceFCI.CellTemplate = new DataGridViewTextBoxCell();
-            nomeTesserato.CellTemplate = new DataGridViewTextBoxCell();
-            categoria.CellTemplate = new DataGridViewTextBoxCell();
-            booleanRemove.CellTemplate = new DataGridViewCheckBoxCell();
-            dataGridView2.Columns.Add(nomeGara);
-            dataGridView2.Columns.Add(CodiceFCI);
-            dataGridView2.Columns.Add(nomeTesserato);
-            dataGridView2.Columns.Add(categoria);
-            dataGridView2.Columns.Add(booleanRemove);
-        }
     }
 }

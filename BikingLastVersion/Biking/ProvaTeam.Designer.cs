@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.RemoveFromData2BTN = new System.Windows.Forms.Button();
@@ -55,22 +55,22 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle43.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 157);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
-            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(550, 339);
             this.dataGridView1.TabIndex = 223;
@@ -78,22 +78,22 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            dataGridViewCellStyle46.BackColor = System.Drawing.Color.White;
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(660, 157);
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle47;
-            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(550, 339);
             this.dataGridView2.TabIndex = 225;
@@ -109,6 +109,7 @@
             this.RemoveFromData2BTN.TabIndex = 228;
             this.RemoveFromData2BTN.Text = "<<";
             this.RemoveFromData2BTN.UseVisualStyleBackColor = false;
+            this.RemoveFromData2BTN.Click += new System.EventHandler(this.RemoveFromData2BTN_Click);
             // 
             // TransferToData2BTN
             // 
@@ -121,18 +122,20 @@
             this.TransferToData2BTN.TabIndex = 227;
             this.TransferToData2BTN.Text = ">>";
             this.TransferToData2BTN.UseVisualStyleBackColor = false;
+            this.TransferToData2BTN.Click += new System.EventHandler(this.TransferToData2BTN_Click);
             // 
             // AddTeamBTN
             // 
             this.AddTeamBTN.BackColor = System.Drawing.Color.Aqua;
             this.AddTeamBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddTeamBTN.ForeColor = System.Drawing.Color.Black;
-            this.AddTeamBTN.Location = new System.Drawing.Point(551, 551);
+            this.AddTeamBTN.Location = new System.Drawing.Point(619, 38);
             this.AddTeamBTN.Name = "AddTeamBTN";
-            this.AddTeamBTN.Size = new System.Drawing.Size(119, 53);
+            this.AddTeamBTN.Size = new System.Drawing.Size(158, 66);
             this.AddTeamBTN.TabIndex = 231;
             this.AddTeamBTN.Text = "CREA TEAM";
             this.AddTeamBTN.UseVisualStyleBackColor = false;
+            this.AddTeamBTN.Click += new System.EventHandler(this.AddTeamBTN_Click);
             // 
             // SelectALLGrid2BTN
             // 
@@ -145,6 +148,7 @@
             this.SelectALLGrid2BTN.TabIndex = 233;
             this.SelectALLGrid2BTN.Text = "Seleziona Tutti";
             this.SelectALLGrid2BTN.UseVisualStyleBackColor = false;
+            this.SelectALLGrid2BTN.Click += new System.EventHandler(this.SelectALLGrid2BTN_Click);
             // 
             // SelectALLGrid1BTN
             // 
@@ -157,10 +161,11 @@
             this.SelectALLGrid1BTN.TabIndex = 232;
             this.SelectALLGrid1BTN.Text = "Seleziona Tutti";
             this.SelectALLGrid1BTN.UseVisualStyleBackColor = false;
+            this.SelectALLGrid1BTN.Click += new System.EventHandler(this.SelectALLGrid1BTN_Click);
             // 
             // GaraNameTextBox
             // 
-            this.GaraNameTextBox.Location = new System.Drawing.Point(378, 70);
+            this.GaraNameTextBox.Location = new System.Drawing.Point(320, 80);
             this.GaraNameTextBox.Name = "GaraNameTextBox";
             this.GaraNameTextBox.Size = new System.Drawing.Size(113, 20);
             this.GaraNameTextBox.TabIndex = 239;
@@ -168,7 +173,7 @@
             // SaveButton
             // 
             this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.SaveButton.Location = new System.Drawing.Point(815, 75);
+            this.SaveButton.Location = new System.Drawing.Point(927, 502);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(97, 39);
             this.SaveButton.TabIndex = 238;
@@ -178,7 +183,7 @@
             // ProvaLabel
             // 
             this.ProvaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ProvaLabel.Location = new System.Drawing.Point(257, 65);
+            this.ProvaLabel.Location = new System.Drawing.Point(208, 69);
             this.ProvaLabel.Name = "ProvaLabel";
             this.ProvaLabel.Size = new System.Drawing.Size(106, 31);
             this.ProvaLabel.TabIndex = 237;
@@ -188,7 +193,7 @@
             // CategoryLabel
             // 
             this.CategoryLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.CategoryLabel.Location = new System.Drawing.Point(42, 66);
+            this.CategoryLabel.Location = new System.Drawing.Point(12, 70);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(87, 30);
             this.CategoryLabel.TabIndex = 236;
@@ -198,7 +203,7 @@
             // CategoriaComboBoxFilter
             // 
             this.CategoriaComboBoxFilter.FormattingEnabled = true;
-            this.CategoriaComboBoxFilter.Location = new System.Drawing.Point(144, 70);
+            this.CategoriaComboBoxFilter.Location = new System.Drawing.Point(117, 79);
             this.CategoriaComboBoxFilter.Name = "CategoriaComboBoxFilter";
             this.CategoriaComboBoxFilter.Size = new System.Drawing.Size(75, 21);
             this.CategoriaComboBoxFilter.TabIndex = 235;
@@ -206,7 +211,7 @@
             // ReturnButon
             // 
             this.ReturnButon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ReturnButon.Location = new System.Drawing.Point(931, 75);
+            this.ReturnButon.Location = new System.Drawing.Point(1060, 502);
             this.ReturnButon.Name = "ReturnButon";
             this.ReturnButon.Size = new System.Drawing.Size(97, 39);
             this.ReturnButon.TabIndex = 234;
@@ -218,7 +223,7 @@
             // 
             this.MostraTuttiButton.BackColor = System.Drawing.Color.White;
             this.MostraTuttiButton.ForeColor = System.Drawing.Color.Black;
-            this.MostraTuttiButton.Location = new System.Drawing.Point(509, 61);
+            this.MostraTuttiButton.Location = new System.Drawing.Point(480, 65);
             this.MostraTuttiButton.Name = "MostraTuttiButton";
             this.MostraTuttiButton.Size = new System.Drawing.Size(82, 39);
             this.MostraTuttiButton.TabIndex = 240;
