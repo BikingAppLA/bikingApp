@@ -17,8 +17,57 @@ namespace Biking
         static AccessOperations accessOperations = new AccessOperations();
         public static DataTable _table1 = new DataTable();
         public static DataTable _table2 = new DataTable();
+        public static DataTable _table3 = new DataTable();
         DataTable listaGare = accessOperations.GetGaraAtletaTable(_table1);
         DataTable listaAtleti = accessOperations.GetAccessTable(_table2);
+        DataGridViewColumn minutes = new DataGridViewColumn
+        {
+            Name = "Minuti",
+            HeaderText = "Minuti",
+            CellTemplate = new DataGridViewTextBoxCell()
+        };
+        DataGridViewColumn seconds = new DataGridViewColumn
+        {
+            Name = "Secondi",
+            HeaderText = "Secondi",
+            CellTemplate = new DataGridViewTextBoxCell()
+        };
+        DataGridViewColumn cents = new DataGridViewColumn
+        {
+            Name = "Centesimi",
+            HeaderText = "Centesimi",
+            CellTemplate = new DataGridViewTextBoxCell()
+        };
+        DataGridViewColumn milliseconds = new DataGridViewColumn
+        {
+            Name = "Millisecondi",
+            HeaderText = "Millisecondi",
+            CellTemplate = new DataGridViewTextBoxCell()
+        };
+        DataGridViewColumn giri = new DataGridViewColumn
+        {
+            Name = "Giri",
+            HeaderText = "Giri",
+            CellTemplate = new DataGridViewTextBoxCell()
+        };
+        DataGridViewColumn km = new DataGridViewColumn
+        {
+            Name = "Kilometri",
+            HeaderText = "Kilometri",
+            CellTemplate = new DataGridViewTextBoxCell()
+        };
+        DataGridViewColumn punti = new DataGridViewColumn
+        {
+            Name = "Punti",
+            HeaderText = "Punti",
+            CellTemplate = new DataGridViewTextBoxCell()
+        };
+        DataGridViewCheckBoxColumn isLastProva = new DataGridViewCheckBoxColumn
+        {
+            Name = "UltimaProva",
+            HeaderText = "Step finale prova?",
+            CellTemplate = new DataGridViewCheckBoxCell()
+        };
 
         public Prova()
         {
@@ -50,47 +99,7 @@ namespace Biking
                     CategoriaComboBox.Items.Add(val);
                 }
             }
-            CategoriaComboBox.Items.Add(emptyItem);
-
-            DataGridViewColumn nomeGara = new DataGridViewColumn
-            {
-                Name = "NomeGara",
-                HeaderText = "Nome Gara"
-            };
-            DataGridViewColumn CodiceFCI = new DataGridViewColumn
-            {
-                Name = "CodiceFCI",
-                HeaderText = "Codice FCI"
-            };
-            DataGridViewColumn nomeTesserato = new DataGridViewColumn
-            {
-                Name = "NomeTesserato",
-                HeaderText = "Nome Tesserato"
-            };
-            DataGridViewColumn categoria = new DataGridViewColumn
-            {
-                Name = "Categoria",
-                HeaderText = "Categoria"
-            };
-            DataGridViewCheckBoxColumn booleanRemove = new DataGridViewCheckBoxColumn
-            {
-                Name = "Rimuovidallaista",
-                HeaderText = "Rimuovi Dalla Lista"
-            };
-
-            nomeGara.CellTemplate = new DataGridViewTextBoxCell();
-            CodiceFCI.CellTemplate = new DataGridViewTextBoxCell();
-            nomeTesserato.CellTemplate = new DataGridViewTextBoxCell();
-            categoria.CellTemplate = new DataGridViewTextBoxCell();
-            booleanRemove.CellTemplate = new DataGridViewCheckBoxCell();
-
-            dataGridView2.Columns.Add(nomeGara);
-            dataGridView2.Columns.Add(CodiceFCI);
-            dataGridView2.Columns.Add(nomeTesserato);
-            dataGridView2.Columns.Add(categoria);
-            dataGridView2.Columns.Add(booleanRemove);
-
-        }
+            CategoriaComboBox.Items.Add(emptyItem);   }
 
 
         //Close this form(showdialog) and return to the precedent
@@ -135,6 +144,7 @@ namespace Biking
 
         }
 
+        // Show All Button (dtgv 1)
         private void MostraTuttiButton_Click(object sender, EventArgs e)
         {
             DataTable res1 = new DataTable();
@@ -292,6 +302,62 @@ namespace Biking
         void TeamForm_FormClosed (object sender, FormClosedEventArgs e)
         {
             this.Show();
+            //var tblTeam = accessOperations.GetTeamTable(_table3);
+            //dataGridView2.DataSource = tblTeam;
+            //dataGridView2.Columns.Add(minutes);
+            //dataGridView2.Columns.Add(seconds);
+            //dataGridView2.Columns.Add(cents);
+            //dataGridView2.Columns.Add(milliseconds);
+            //dataGridView2.Columns.Add(giri);
+            //dataGridView2.Columns.Add(km);
+            //dataGridView2.Columns.Add(punti);
+            //dataGridView2.Columns.Add(isLastProva);
+        }
+
+        private void AssegnPunteggiButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SingleChoiceButton_Click(object sender, EventArgs e)
+        {
+
+            DataGridViewColumn nomeGara = new DataGridViewColumn
+            {
+                Name = "NomeGara",
+                HeaderText = "Nome Gara"
+            };
+            DataGridViewColumn CodiceFCI = new DataGridViewColumn
+            {
+                Name = "CodiceFCI",
+                HeaderText = "Codice FCI"
+            };
+            DataGridViewColumn nomeTesserato = new DataGridViewColumn
+            {
+                Name = "NomeTesserato",
+                HeaderText = "Nome Tesserato"
+            };
+            DataGridViewColumn categoria = new DataGridViewColumn
+            {
+                Name = "Categoria",
+                HeaderText = "Categoria"
+            };
+            DataGridViewCheckBoxColumn booleanRemove = new DataGridViewCheckBoxColumn
+            {
+                Name = "Rimuovidallaista",
+                HeaderText = "Rimuovi Dalla Lista"
+            };
+
+            nomeGara.CellTemplate = new DataGridViewTextBoxCell();
+            CodiceFCI.CellTemplate = new DataGridViewTextBoxCell();
+            nomeTesserato.CellTemplate = new DataGridViewTextBoxCell();
+            categoria.CellTemplate = new DataGridViewTextBoxCell();
+            booleanRemove.CellTemplate = new DataGridViewCheckBoxCell();
+            dataGridView2.Columns.Add(nomeGara);
+            dataGridView2.Columns.Add(CodiceFCI);
+            dataGridView2.Columns.Add(nomeTesserato);
+            dataGridView2.Columns.Add(categoria);
+            dataGridView2.Columns.Add(booleanRemove);
         }
     }
 }

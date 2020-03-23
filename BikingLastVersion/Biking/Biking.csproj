@@ -93,6 +93,12 @@
     <Compile Include="Gara.Designer.cs">
       <DependentUpon>Gara.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProvaTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProvaTeam.Designer.cs">
+      <DependentUpon>ProvaTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="RunnerList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gara.resx">
       <DependentUpon>Gara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProvaTeam.resx">
+      <DependentUpon>ProvaTeam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RunnerList.resx">
       <DependentUpon>RunnerList.cs</DependentUpon>

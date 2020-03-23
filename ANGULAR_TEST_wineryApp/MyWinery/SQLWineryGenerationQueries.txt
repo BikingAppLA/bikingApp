@@ -1,0 +1,22 @@
+USE [WineryManagement]
+GO
+/****** Object:  Table [dbo].[Wines]    Script Date: 12/5/2019 5:15:28 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Wines](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[Type] [nvarchar](max) NOT NULL,
+	[Producer] [nvarchar](max) NULL,
+	[AlcoholContent] [decimal](18, 2) NULL,
+	[Review] [decimal](18, 2) NULL,
+	[Description] [nvarchar](max) NULL,
+	[Quantity] [int] NULL,
+ CONSTRAINT [PK_Wines] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO

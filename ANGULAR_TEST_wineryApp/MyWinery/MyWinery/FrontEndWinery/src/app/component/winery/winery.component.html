@@ -1,0 +1,85 @@
+<h1>Vini posseduti in cantina</h1>
+
+<div *ngIf="editView === 'main'">
+<table  id="sidebar-wrapper" class="table table-hover table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Producer</th>
+        <th scope="col">Alcohol Content</th>
+        <th scope="col">Review</th>
+        <th scope="col">Description</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let wi of wines">
+        <td>{{wi.Name}}</td>
+        <td>{{wi.Type}}</td>
+        <td>{{wi.Producer}}</td>
+        <td>{{wi.AlcoholContent}}</td>
+        <td>{{wi.Review}}</td>
+        <td>{{wi.Description}}</td>
+        <td>{{wi.Quantity}}</td>
+        <td><button type="button" class="btn btn-dark" (click)="onSelect(wi)">Edit</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="onClickDelete(wi.Id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <a class="btn btn-primary" (click)="onClickTableShow()">Aggiungi Vino!</a>
+</div>
+
+
+<div *ngIf="editView === 'addView'" >
+  <ul  class="list-inline">
+    <li class="list-inline-item"><input [(ngModel)]="newWine.name" type="text" class="form-control"  placeholder="Nome"></li>
+    <li class="list-inline-item"><input [(ngModel)]="newWine.type" type="text" class="form-control"  placeholder="Tipo"></li>
+    <li class="list-inline-item"><input [(ngModel)]="newWine.producer" type="text" class="form-control"  placeholder="Produttore"></li>
+    <li class="list-inline-item"><input [(ngModel)]="newWine.alcoholContent" type="number" class="form-control"  placeholder="Gradazione Alcolica"></li>
+    <li class="list-inline-item"><input [(ngModel)]="newWine.review" type="number" class="form-control"  placeholder="Gradimento"></li>
+    <li class="list-inline-item"><input [(ngModel)]="newWine.description" type="text" class="form-control"  placeholder="Descrizione"></li>
+    <li class="list-inline-item"><input [(ngModel)]="newWine.quantity" type="text" class="form-control"  placeholder="Quantità"></li>
+  </ul>
+<button class="btn btn-primary" (click)="onClickAdd(newWine)">Conferma Aggiunta</button>
+<button class="btn btn-primary" (click)="onClickReturn()">Torna indietro</button>
+</div>
+
+<!-- view del singolo record per EDIT -->
+
+<div *ngIf="editView === 'show'"  >
+    <table id="sidebar-wrapper" class="table table-hover table-bordered">
+    <thead class="thead-dark">
+        <th scope="col">Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Producer</th>
+        <th scope="col">Alcohol Content</th>
+        <th scope="col">Review</th>
+        <th scope="col">Description</th>
+        <th scope="col">Quantity</th>
+    </thead>
+    <tbody>
+        <td>{{editedWine.Name}}</td>
+        <td>{{editedWine.Type}}</td>
+        <td>{{editedWine.Producer}}</td>
+        <td>{{editedWine.AlcoholContent}}</td>
+        <td>{{editedWine.Review}}</td>
+        <td>{{editedWine.Description}}</td>
+        <td>{{editedWine.Quantity}}</td>
+    </tbody>
+</table>
+
+<ul class="list-inline">
+    <li class="list-inline-item"><input type="text" [(ngModel)]="editedWine.Name" class="form-control" placeholder="Nome" ></li>
+    <li class="list-inline-item"><input type="text" [(ngModel)]="editedWine.Type" class="form-control" placeholder="Tipo" ></li>
+    <li class="list-inline-item"><input type="text" [(ngModel)]="editedWine.Producer" class="form-control" placeholder="Produttore" ></li>
+    <li class="list-inline-item"><input type="number" [(ngModel)]="editedWine.AlcoholContent" class="form-control" placeholder="Gradazione Alcolica" ></li>
+    <li class="list-inline-item"><input type="number" [(ngModel)]="editedWine.Review" class="form-control" placeholder="Voto"></li>
+    <li class="list-inline-item"><input type="text" [(ngModel)]="editedWine.Description" class="form-control" placeholder="Descrizione" ></li>
+    <li class="list-inline-item"><input type="number" [(ngModel)]="editedWine.Quantity" class="form-control" placeholder="Quantità" ></li>
+</ul>
+<button class="btn btn-primary" (click)="onClickEdit(editedWine)">Conferma Modifiche</button>
+<button class="btn btn-primary" (click)="onClickReturn()">Torna indietro</button>
+</div>

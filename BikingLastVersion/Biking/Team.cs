@@ -127,7 +127,7 @@ namespace Biking
 
             cmd.Parameters.Clear();
 
-            cmd.Parameters.AddWithValue("@Nome", this.NomeTeamTextBox.Text.ToString() ?? "");
+            cmd.Parameters.AddWithValue("@Nome", this.NomeTeamTextBox.Text.ToString());
 
             cmd.Parameters.AddWithValue("@Runner1FCI", this.CodiceFCI1.Text.ToString() ?? "");
 
@@ -138,9 +138,7 @@ namespace Biking
             cmd.Parameters.AddWithValue("@Runner4FCI", this.CodiceFCI4.Text.ToString() ?? "");
 
             cmd.Parameters.AddWithValue("@Categoria", categoria ?? "");
-
-
-
+            
 
             cmd.ExecuteNonQuery();
             #endregion

@@ -51,11 +51,12 @@ namespace Biking
             return dataTable;
         }
 
-        public DataTable GetGaraAtletaTable(DataTable dataTable)
+
+        public DataTable GetTeamTableFiltered(DataTable dataTable)
         {
             OleDbConnection conn = new OleDbConnection(_accessConnectionString1);
 
-            OleDbCommand cmd1 = new OleDbCommand("SELECT * FROM [GaraATLETA]", conn);
+            OleDbCommand cmd1 = new OleDbCommand("SELECT [Nome] FROM [Team]", conn);
 
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd1);
 
@@ -82,6 +83,24 @@ namespace Biking
 
             return dataTable;
         }
+
+        public DataTable GetGaraAtletaTable(DataTable dataTable)
+        {
+            OleDbConnection conn = new OleDbConnection(_accessConnectionString1);
+
+            OleDbCommand cmd1 = new OleDbCommand("SELECT * FROM [GaraATLETA]", conn);
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd1);
+
+            conn.Open();
+            dataTable.Clear();
+            adapter.Fill(dataTable);
+            conn.Close();
+
+            return dataTable;
+        }
+
+        
 
         public void ClearRunner()
         {

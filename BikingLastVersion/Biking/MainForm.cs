@@ -50,6 +50,7 @@ namespace Biking
 
             textboxDirectory.Text = fileName;
             dataGridView1.DataSource = excelTbl;
+            this.dataGridView1.Columns["DorsaleNumero"].Visible = false;
         }
 
         
@@ -91,6 +92,7 @@ namespace Biking
         void AddForm_FormClosed(object sender, EventArgs e)
         {
             dataGridView1.DataSource = accessTbl;
+            dataGridView1.Columns["DorsaleNumero"].Visible = false;
             accessOperations.GetAccessTable(accessTbl);
             this.Show();
         }
@@ -131,6 +133,7 @@ namespace Biking
         void EditForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             dataGridView1.DataSource = accessTbl;
+            this.dataGridView1.Columns["DorsaleNumero"].Visible = false;
             accessOperations.GetAccessTable(accessTbl);
             this.Show();
         }
@@ -182,6 +185,19 @@ namespace Biking
         }
 
         void CreaProva_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void CreaProvaTeamBtn_Click(object sender, EventArgs e)
+        {
+            ProvaTeam provaTeam = new ProvaTeam();
+            provaTeam.FormClosed += new FormClosedEventHandler(ProvaTeam_FormClosed);
+            this.Hide();
+            provaTeam.ShowDialog();
+        }
+
+        public void ProvaTeam_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }

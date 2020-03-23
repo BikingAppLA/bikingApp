@@ -42,6 +42,7 @@
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.CreaGaraBtn = new System.Windows.Forms.Button();
             this.AddProvaButton = new System.Windows.Forms.Button();
+            this.CreaProvaTEAMBUTTON = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,13 +184,25 @@
             // 
             this.AddProvaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.AddProvaButton.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddProvaButton.Location = new System.Drawing.Point(630, 212);
+            this.AddProvaButton.Location = new System.Drawing.Point(520, 212);
             this.AddProvaButton.Name = "AddProvaButton";
             this.AddProvaButton.Size = new System.Drawing.Size(104, 61);
             this.AddProvaButton.TabIndex = 31;
-            this.AddProvaButton.Text = "CREA PROVA";
+            this.AddProvaButton.Text = "CREA PROVA SINGOLA";
             this.AddProvaButton.UseVisualStyleBackColor = false;
             this.AddProvaButton.Click += new System.EventHandler(this.CreaProvaButton_Click);
+            // 
+            // CreaProvaTEAMBUTTON
+            // 
+            this.CreaProvaTEAMBUTTON.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.CreaProvaTEAMBUTTON.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreaProvaTEAMBUTTON.Location = new System.Drawing.Point(630, 212);
+            this.CreaProvaTEAMBUTTON.Name = "CreaProvaTEAMBUTTON";
+            this.CreaProvaTEAMBUTTON.Size = new System.Drawing.Size(104, 61);
+            this.CreaProvaTEAMBUTTON.TabIndex = 32;
+            this.CreaProvaTEAMBUTTON.Text = "CREA PROVA SQUADRE";
+            this.CreaProvaTEAMBUTTON.UseVisualStyleBackColor = false;
+            this.CreaProvaTEAMBUTTON.Click += new System.EventHandler(this.CreaProvaTeamBtn_Click);
             // 
             // MainForm
             // 
@@ -199,6 +212,7 @@
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.BackgroundImage = global::Biking.Properties.Resources.cyclist;
             this.ClientSize = new System.Drawing.Size(938, 744);
+            this.Controls.Add(this.CreaProvaTEAMBUTTON);
             this.Controls.Add(this.AddProvaButton);
             this.Controls.Add(this.CreaGaraBtn);
             this.Controls.Add(this.comboBoxFilter);
@@ -242,6 +256,7 @@
         private System.Windows.Forms.ComboBox comboBoxFilter;
         private System.Windows.Forms.Button CreaGaraBtn;
         private System.Windows.Forms.Button AddProvaButton;
+        private System.Windows.Forms.Button CreaProvaTEAMBUTTON;
     }
 }
 
