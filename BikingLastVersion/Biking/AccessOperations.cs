@@ -51,6 +51,22 @@ namespace Biking
             return dataTable;
         }
 
+        public DataTable GetOnlyNameRunner(DataTable tbl)
+        {
+            OleDbConnection conn = new OleDbConnection(_accessConnectionString1);
+
+            OleDbCommand cmd1 = new OleDbCommand("SELECT [NomeTesserato], [CodiceFCI], [Categoria], [DataNascita] FROM [Runner]", conn);
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd1);
+
+            conn.Open();
+            tbl.Clear();
+            adapter.Fill(tbl);
+            conn.Close();
+
+            return tbl;
+        }
+
 
         public DataTable GetTeamTableFiltered(DataTable dataTable)
         {

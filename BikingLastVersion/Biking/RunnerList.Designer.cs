@@ -32,6 +32,7 @@
             this.ReturnButon = new System.Windows.Forms.Button();
             this.CategorieFilterLabel = new System.Windows.Forms.Label();
             this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
+            this.ShowAllBTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,16 +78,29 @@
             this.CategoriaComboBox.TabIndex = 226;
             this.CategoriaComboBox.SelectionChangeCommitted += new System.EventHandler(this.CategoriaComboBox_SelectionChangeCommitted);
             // 
+            // ShowAllBTN
+            // 
+            this.ShowAllBTN.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ShowAllBTN.Location = new System.Drawing.Point(295, 22);
+            this.ShowAllBTN.Name = "ShowAllBTN";
+            this.ShowAllBTN.Size = new System.Drawing.Size(94, 44);
+            this.ShowAllBTN.TabIndex = 227;
+            this.ShowAllBTN.Text = "Mostra Tutti";
+            this.ShowAllBTN.UseVisualStyleBackColor = false;
+            this.ShowAllBTN.Click += new System.EventHandler(this.ShowAllBTN_Click);
+            // 
             // RunnerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 561);
+            this.Controls.Add(this.ShowAllBTN);
             this.Controls.Add(this.CategoriaComboBox);
             this.Controls.Add(this.CategorieFilterLabel);
             this.Controls.Add(this.ReturnButon);
             this.Controls.Add(this.dataGridView1);
             this.Name = "RunnerList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RunnerList";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -99,5 +113,6 @@
         private System.Windows.Forms.Button ReturnButon;
         private System.Windows.Forms.Label CategorieFilterLabel;
         private System.Windows.Forms.ComboBox CategoriaComboBox;
+        private System.Windows.Forms.Button ShowAllBTN;
     }
 }

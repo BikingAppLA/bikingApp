@@ -122,12 +122,13 @@ namespace Biking
             conn.Open();
 
             string categoria = CategoriaComboBox.SelectedItem == null ? String.Empty : this.CategoriaComboBox.SelectedItem.ToString();
+            string nomeTeam = NomeTeamTextBox.Text == null ? String.Empty : this.NomeTeamTextBox.Text.ToString();
 
             #region parameters
 
             cmd.Parameters.Clear();
 
-            cmd.Parameters.AddWithValue("@Nome", this.NomeTeamTextBox.Text.ToString());
+            cmd.Parameters.AddWithValue("@Nome", nomeTeam);
 
             cmd.Parameters.AddWithValue("@Runner1FCI", this.CodiceFCI1.Text.ToString() ?? "");
 
@@ -138,13 +139,23 @@ namespace Biking
             cmd.Parameters.AddWithValue("@Runner4FCI", this.CodiceFCI4.Text.ToString() ?? "");
 
             cmd.Parameters.AddWithValue("@Categoria", categoria ?? "");
-            
 
-            cmd.ExecuteNonQuery();
+            if (!string.IsNullOrEmpty(nomeTeam))
+            {
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                string message = "Team importato con successo!";
+                MessageBox.Show(message);
+            }
+            else
+            {
+                string messageSeverity = "Devi inserire il nome del team!";
+                MessageBox.Show(messageSeverity);
+                return;
+            }
+
             #endregion
-            conn.Close();
-            string message = "Team importato con successo!";
-            MessageBox.Show(message);
+
         }
 
     }

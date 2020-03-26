@@ -58,7 +58,10 @@ namespace Biking
         private void MostraTuttiButton_Click(object sender, EventArgs e)
         {
             var teamTbl = accessOperations.GetTeamTableFiltered(_table1);
-            teamTbl.Columns.Add("Seleziona Team per la Prova", typeof(Boolean));
+            if (teamTbl.Columns.Count < 2)
+            {
+                teamTbl.Columns.Add("Seleziona Team per la Prova", typeof(Boolean));
+            }
             dataGridView1.DataSource = teamTbl;
         }
 

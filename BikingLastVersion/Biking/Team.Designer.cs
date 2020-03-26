@@ -302,6 +302,7 @@
             this.Controls.Add(this.NomeTeamTextBox);
             this.Controls.Add(this.NomeTeamLabel);
             this.Name = "Team";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Team";
             this.ResumeLayout(false);
             this.PerformLayout();

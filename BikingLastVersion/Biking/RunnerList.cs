@@ -15,8 +15,11 @@ namespace Biking
         static AccessOperations accessOperations = new AccessOperations();
         static public DataTable _tbl = new DataTable();
         public static DataTable _table1 = new DataTable();
+        public static DataTable _table2 = new DataTable();
         Team _team;
         DataTable listaGare = accessOperations.GetGaraAtletaTable(_table1);
+        DataTable listaAtleti = accessOperations.GetAccessTable(_table2);
+        DataTable tblRunnerFiltered = accessOperations.GetOnlyNameRunner(_tbl);
 
         public RunnerList(Team team)
         {
@@ -26,9 +29,9 @@ namespace Biking
             
 
             //Populate combobox category (filter)
-            for (int i = 0; i < listaGare.Rows.Count; i++)
+            for (int i = 0; i < listaAtleti.Rows.Count; i++)
             {
-                var val = listaGare.Rows[i].ItemArray.GetValue(3);
+                var val = listaAtleti.Rows[i].ItemArray.GetValue(5);
 
                 if (!CategoriaComboBox.Items.Contains(val))
                 {
@@ -39,11 +42,11 @@ namespace Biking
 
         }
 
-        public void FunData1(TextBox nome)
-        {
-            nome.Text  = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            //codice.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-        }
+        //public void FunData1(TextBox nome)
+        //{
+        //    nome.Text  = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+        //    //codice.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+        //}
 
         private void ReturnButon_Click(object sender, EventArgs e)
         {
@@ -52,6 +55,7 @@ namespace Biking
 
         private void CategoriaComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
             string filterCboBox = this.CategoriaComboBox.SelectedItem.ToString();
             var dataTable = accessOperations.GetAccessTable(_tbl);
 
@@ -88,6 +92,12 @@ namespace Biking
             }
 
             this.Close();
+        }
+
+        private void ShowAllBTN_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = tblRunnerFiltered;
         }
     }
 }
