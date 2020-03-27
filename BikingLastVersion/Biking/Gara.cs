@@ -17,8 +17,10 @@ namespace Biking
 
         public static DataTable _table = new DataTable();
         public static DataTable _table1 = new DataTable();
+        public static DataTable _table2 = new DataTable();
         public string filterCboBox1;
         DataTable dataTableCurrent = accessOperations.GetAccessTable(_table);
+        DataTable garaTbl = accessOperations.GetGaraTable(_table2);
 
         public Gara(DataTable dt)
         {
@@ -34,6 +36,10 @@ namespace Biking
                     CategoriaComboBoxFilter.Items.Add(val);
                 }
             }
+
+            GaraCboBox.DataSource = garaTbl;
+            GaraCboBox.DisplayMember = "NomeGara";
+            GaraCboBox.ValueMember = "Id";
 
             DataGridViewButtonColumn dataGridViewButtonColumn2 = new DataGridViewButtonColumn
             {
@@ -78,7 +84,7 @@ namespace Biking
             dataGridView2.Columns.Add(fciCol);
             dataGridView2.Columns.Add(catCol);
             dataGridView2.Columns.Add(dorsalCol);
-            
+
         }
 
         private void ReturnBtn_Click(object sender, EventArgs e)
@@ -188,50 +194,55 @@ namespace Biking
                     CommandType = CommandType.Text
                 };
 
+                DataRow selectedDataRow = ((DataRowView)GaraCboBox.SelectedItem).Row;
+                int garaId = Convert.ToInt32(selectedDataRow["Id"]);
+
                 _conn.Open();
 
                 for (int i = 0; i < dataGridView2.Rows.Count; i++)
                 {
-                    cmd.CommandText = @"INSERT INTO [GaraAtleta]([NomeGara], [CodiceFCIATLETA], [Categoria]) VALUES " +
-                    " (@nomeGara, @codiceFCI, @categoria)";
+                    cmd.CommandText = @"INSERT INTO [GaraAtleta]([IdGara], [NomeGara], [CodiceFCIATLETA], [Categoria]) VALUES " +
+                    " (@IdGara, @nomeGara, @codiceFCI, @categoria)";
 
                     cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@IdGara", garaId); 
                     cmd.Parameters.AddWithValue("@nomeGara", nomeGara);
                     cmd.Parameters.AddWithValue("@codiceFCI", dataGridView2.Rows[i].Cells[2].Value.ToString());
                     cmd.Parameters.AddWithValue("@categoria", categoria);
-
+                    
                     cmd.ExecuteNonQuery();
                 }
 
-        //    AND.....   ADD nomegara to Gara Table if it isn't already present
-
-                DataTable listaGare = accessOperations.GetGaraTable(_table1);
-                if (listaGare.Rows.Count == 0)
-                {
-                    cmd1.CommandText = @"INSERT INTO [Gara]([NomeGara]) VALUES ( @nomeGara);";
-                    cmd1.Parameters.AddWithValue("@nomeGara", nomeGara);
-                    cmd1.ExecuteNonQuery();
-                }
-                else if (listaGare.Rows.Count > 0)
-                {
-                    bool alreadyPresent = false;
-                    foreach (DataRow row in listaGare.Rows)
-                    {
-                        var nomeGara1 = GaraNameTextBox.Text.ToString() ?? String.Empty;
-                        var nomeGaraInsideDB = row.ItemArray[1].ToString();
-                        if (nomeGara1 == nomeGaraInsideDB && nomeGara1 != "")
-                        {
-                            alreadyPresent = true;
-                            break;
-                        }
-                    }
-                    if (!alreadyPresent)
-                    {
-                        cmd1.CommandText = @"INSERT INTO [Gara]([NomeGara]) VALUES ( @nomeGara);";
-                        cmd1.Parameters.AddWithValue("@nomeGara", GaraNameTextBox.Text.ToString());
-                        cmd1.ExecuteNonQuery();
-                    }
-                }
+                // DEPRECATED - -    AND.....   ADD nomegara to Gara Table if it isn't already present   - -   DEPRECATED
+                #region Deprecated dynamic add to Gara with validation
+                //DataTable listaGare = accessOperations.GetGaraTable(_table1);
+                //if (listaGare.Rows.Count == 0)
+                //{
+                //    cmd1.CommandText = @"INSERT INTO [Gara]([NomeGara]) VALUES ( @nomeGara);";
+                //    cmd1.Parameters.AddWithValue("@nomeGara", nomeGara);
+                //    cmd1.ExecuteNonQuery();
+                //}
+                //else if (listaGare.Rows.Count > 0)
+                //{
+                //    bool alreadyPresent = false;
+                //    foreach (DataRow row in listaGare.Rows)
+                //    {
+                //        var nomeGara1 = GaraNameTextBox.Text.ToString() ?? String.Empty;
+                //        var nomeGaraInsideDB = row.ItemArray[1].ToString();
+                //        if (nomeGara1 == nomeGaraInsideDB && nomeGara1 != "")
+                //        {
+                //            alreadyPresent = true;
+                //            break;
+                //        }
+                //    }
+                //    if (!alreadyPresent)
+                //    {
+                //        cmd1.CommandText = @"INSERT INTO [Gara]([NomeGara]) VALUES ( @nomeGara);";
+                //        cmd1.Parameters.AddWithValue("@nomeGara", GaraNameTextBox.Text.ToString());
+                //        cmd1.ExecuteNonQuery();
+                //    }
+                //}
+                #endregion
 
                 _conn.Close();
                 string message = "Lista di gara importata con successo!";

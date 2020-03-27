@@ -78,10 +78,10 @@ namespace Biking
 
             //Add items to Combobox NomeGara
             DataTable dt = new DataTable();
-            DataTable listaNomiGare = accessOperations.GetGaraTable(dt);
+            DataTable listaNomiGare = accessOperations.GetGaraAtletaTable(dt);
             for (int i = 0; i < listaNomiGare.Rows.Count; i++)
             {
-                var val = listaNomiGare.Rows[i].ItemArray.GetValue(1);
+                var val = listaNomiGare.Rows[i].ItemArray.GetValue(2);
 
                 if (!NomeGaraComboBox.Items.Contains(val))
                 {
@@ -95,7 +95,7 @@ namespace Biking
             //Add items to Combobox Categoria
             for (int i = 0; i < listaGare.Rows.Count; i++)
             {
-                var val = listaGare.Rows[i].ItemArray.GetValue(3);
+                var val = listaGare.Rows[i].ItemArray.GetValue(4);
 
                 if (!CategoriaComboBox.Items.Contains(val))
                 {

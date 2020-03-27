@@ -59,7 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessOperations.cs" />
+    <Compile Include="FileOperations\AccessOperations.cs" />
     <Compile Include="AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,7 +72,7 @@
     <Compile Include="EDITForm.Designer.cs">
       <DependentUpon>EDITForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExcelOperations.cs" />
+    <Compile Include="FileOperations\ExcelOperations.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

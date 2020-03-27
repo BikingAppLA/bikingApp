@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelCboBox = new System.Windows.Forms.Label();
             this.ReturnButon = new System.Windows.Forms.Button();
@@ -43,6 +43,8 @@
             this.garaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SaveButton = new System.Windows.Forms.Button();
             this.GaraNameTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.GaraCboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.garaBindingSource)).BeginInit();
@@ -51,8 +53,8 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1, 128);
@@ -87,8 +89,8 @@
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(575, 128);
@@ -142,11 +144,11 @@
             // ProvaLabel
             // 
             this.ProvaLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ProvaLabel.Location = new System.Drawing.Point(186, 65);
+            this.ProvaLabel.Location = new System.Drawing.Point(401, 65);
             this.ProvaLabel.Name = "ProvaLabel";
             this.ProvaLabel.Size = new System.Drawing.Size(106, 31);
             this.ProvaLabel.TabIndex = 209;
-            this.ProvaLabel.Text = "Inserisci Tipo di Gara:";
+            this.ProvaLabel.Text = "Inserisci Nome della Gara:";
             this.ProvaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // garaBindingSource
@@ -166,16 +168,36 @@
             // 
             // GaraNameTextBox
             // 
-            this.GaraNameTextBox.Location = new System.Drawing.Point(298, 76);
+            this.GaraNameTextBox.Location = new System.Drawing.Point(513, 76);
             this.GaraNameTextBox.Name = "GaraNameTextBox";
             this.GaraNameTextBox.Size = new System.Drawing.Size(113, 20);
             this.GaraNameTextBox.TabIndex = 212;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(186, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 30);
+            this.label1.TabIndex = 214;
+            this.label1.Text = "Scegli la Gara:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // GaraCboBox
+            // 
+            this.GaraCboBox.FormattingEnabled = true;
+            this.GaraCboBox.Location = new System.Drawing.Point(279, 75);
+            this.GaraCboBox.Name = "GaraCboBox";
+            this.GaraCboBox.Size = new System.Drawing.Size(104, 21);
+            this.GaraCboBox.TabIndex = 213;
             // 
             // Gara
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 632);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.GaraCboBox);
             this.Controls.Add(this.GaraNameTextBox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ProvaLabel);
@@ -211,5 +233,7 @@
         private System.Windows.Forms.BindingSource garaBindingSource;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.TextBox GaraNameTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox GaraCboBox;
     }
 }
