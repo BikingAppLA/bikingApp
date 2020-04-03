@@ -1,4 +1,5 @@
-﻿using OfficeOpenXml;
+﻿using Biking.FileOperations;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,29 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Biking
+namespace Biking 
 {
-    public class ExcelOperations
+    public class ExcelOperations : BaseOperations
     {
-        OpenFileDialog ofd = new OpenFileDialog();
-        public static string _path;
-
-        public string DirectoryClick()
-        {
-            ofd.Filter = "XLSX|*.xlsx";
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                _path = ofd.FileName;
-                return _path;
-            }
-            else
-            {
-                string message = "Devi selezionare un file!";
-                MessageBox.Show(message);
-                return DirectoryClick();
-            }
-        }
-
+     
         public DataTable GetDataTableFromExcel(string path)
         {
             using (var pck = new OfficeOpenXml.ExcelPackage())

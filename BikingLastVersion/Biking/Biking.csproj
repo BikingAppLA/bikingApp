@@ -72,6 +72,7 @@
     <Compile Include="EDITForm.Designer.cs">
       <DependentUpon>EDITForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FileOperations\BaseOperations.cs" />
     <Compile Include="FileOperations\ExcelOperations.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

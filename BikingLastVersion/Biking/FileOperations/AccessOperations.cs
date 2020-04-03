@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Biking
 {
-    class AccessOperations 
+    class AccessOperations
     {
         readonly OpenFileDialog ofd1 = new OpenFileDialog();
         readonly ExcelOperations exc = new ExcelOperations();
@@ -60,7 +60,7 @@ namespace Biking
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd1);
 
             conn.Open();
-            tbl.Clear();
+            //tbl.Clear();
             adapter.Fill(tbl);
             conn.Close();
 
@@ -116,7 +116,7 @@ namespace Biking
             return dataTable;
         }
 
-        
+
 
         public void ClearRunner()
         {

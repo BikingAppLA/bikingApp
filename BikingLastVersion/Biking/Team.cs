@@ -16,6 +16,7 @@ namespace Biking
         public static DataTable _table = new DataTable();
         static AccessOperations accessOperations = new AccessOperations();
         public static DataTable _table1 = new DataTable();
+        
         public delegate void delPassData(TextBox text);
         DataTable listaGare = accessOperations.GetAccessTable(_table1);
         public Team()
@@ -35,6 +36,36 @@ namespace Biking
             }
             CategoriaComboBox.Items.Add(emptyItem);
 
+
+            DataGridViewColumn nomeAtleta = new DataGridViewColumn
+            {
+                Name = "NomeAtleta",
+                HeaderText = "Nome Atleta"
+            };
+            DataGridViewColumn categoria = new DataGridViewColumn
+            {
+                Name = "categoria",
+                HeaderText = "Categoria"
+            };
+            DataGridViewColumn codiceFCIAtleta = new DataGridViewColumn
+            {
+                Name = "codiceFCIAtleta",
+                HeaderText = "Codice FCI"
+            };
+            DataGridViewCheckBoxColumn booleanRemove = new DataGridViewCheckBoxColumn
+            {
+                Name = "Rimuovidallaista",
+                HeaderText = "Rimuovi Dalla Lista"
+            };
+            codiceFCIAtleta.CellTemplate = new DataGridViewTextBoxCell();
+            nomeAtleta.CellTemplate = new DataGridViewTextBoxCell();
+            categoria.CellTemplate = new DataGridViewTextBoxCell();
+            booleanRemove.CellTemplate = new DataGridViewCheckBoxCell();
+
+            dataGridView1.Columns.Add(nomeAtleta);
+            dataGridView1.Columns.Add(categoria);
+            dataGridView1.Columns.Add(codiceFCIAtleta);
+            dataGridView1.Columns.Add(booleanRemove);
         }
 
         private void ReturnButon_Click(object sender, EventArgs e)
@@ -42,69 +73,10 @@ namespace Biking
             this.Close();
         }
 
-        private void Runner1_Click(object sender, EventArgs e)
-        {
-            Nome1Team.Text = "";
-            RunnerList runnerList = new RunnerList(this);
-            runnerList.FormClosed += new FormClosedEventHandler(RunnerList_FormClosed);
-            this.Hide();
-            runnerList.ShowDialog();
-        }
 
         void RunnerList_FormClosed(object sender, EventArgs e)
         {
             this.Show();
-        }
-
-        private void Runner2_Click(object sender, EventArgs e)
-        {
-            Nome2Team.Text = "";
-            RunnerList runnerList = new RunnerList(this);
-            runnerList.FormClosed += new FormClosedEventHandler(RunnerList_FormClosed);
-            this.Hide();
-            runnerList.ShowDialog();
-        }
-
-        private void Runner3_Click(object sender, EventArgs e)
-        {
-            Nome3Team.Text = "";
-            RunnerList runnerList = new RunnerList(this);
-            runnerList.FormClosed += new FormClosedEventHandler(RunnerList_FormClosed);
-            this.Hide();
-            runnerList.ShowDialog();
-        }
-
-        private void Runner4_Click(object sender, EventArgs e)
-        {
-            Nome4Team.Text = "";
-            RunnerList runnerList = new RunnerList(this);
-            runnerList.FormClosed += new FormClosedEventHandler(RunnerList_FormClosed);
-            this.Hide();
-            runnerList.ShowDialog();
-        }
-
-        private void Reset1Button_Click(object sender, EventArgs e)
-        {
-            Nome1Team.Text = "Nome";
-            CodiceFCI1.Text = "CodiceFCI";
-        }
-
-        private void Reset2Button_Click(object sender, EventArgs e)
-        {
-            Nome2Team.Text = "Nome";
-            CodiceFCI2.Text = "CodiceFCI";
-        }
-
-        private void Reset3Button_Click(object sender, EventArgs e)
-        {
-            Nome3Team.Text = "Nome";
-            CodiceFCI3.Text = "CodiceFCI";
-        }
-
-        private void Reset4Button_Click(object sender, EventArgs e)
-        {
-            Nome4Team.Text = "Nome";
-            CodiceFCI4.Text = "CodiceFCI";
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -116,8 +88,8 @@ namespace Biking
                 CommandType = CommandType.Text
             };
 
-            cmd.CommandText = @"INSERT INTO [Team] ([Nome], [Runner1FCI], [Runner2FCI], [Runner3FCI], [Runner4FCI], [Categoria]) " +
-                "VALUES (@Nome, @Runner1FCI, @Runner2FCI, @Runner3FCI, @Runner4FCI, @Categoria)";
+            cmd.CommandText = @"INSERT INTO [Team] ([Nome], [Categoria]) " +
+                "VALUES (@Nome, @Categoria)";
 
             conn.Open();
 
@@ -129,14 +101,6 @@ namespace Biking
             cmd.Parameters.Clear();
 
             cmd.Parameters.AddWithValue("@Nome", nomeTeam);
-
-            cmd.Parameters.AddWithValue("@Runner1FCI", this.CodiceFCI1.Text.ToString() ?? "");
-
-            cmd.Parameters.AddWithValue("@Runner2FCI", this.CodiceFCI2.Text.ToString() ?? "");
-
-            cmd.Parameters.AddWithValue("@Runner3FCI", this.CodiceFCI3.Text.ToString() ?? "");
-
-            cmd.Parameters.AddWithValue("@Runner4FCI", this.CodiceFCI4.Text.ToString() ?? "");
 
             cmd.Parameters.AddWithValue("@Categoria", categoria ?? "");
 
@@ -153,10 +117,27 @@ namespace Biking
                 MessageBox.Show(messageSeverity);
                 return;
             }
-
             #endregion
-
         }
 
+        private void AddAthleteBTN_Click(object sender, EventArgs e)
+        {
+            RunnerList runnerList = new RunnerList(this);
+            runnerList.FormClosed += new FormClosedEventHandler(RunnerList_FormClosed);
+            this.Hide();
+            runnerList.ShowDialog();
+        }
+
+        private void RemoveAthleteBooleanBTN_Click(object sender, EventArgs e)
+        {
+            for (int i = dataGridView1.Rows.Count - 1; i >= 0; i--)
+            {
+                var val1 = dataGridView1.Rows[i].Cells[3].Value == null ? String.Empty : dataGridView1.Rows[i].Cells[3].Value.ToString();
+                if (val1 == "True" && val1 != String.Empty)
+                {
+                    dataGridView1.Rows.RemoveAt(i);
+                }
+            }
+        }
     }
 }

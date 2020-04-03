@@ -20,7 +20,7 @@ namespace Biking
         DataTable listaGare = accessOperations.GetGaraAtletaTable(_table1);
         DataTable listaAtleti = accessOperations.GetAccessTable(_table2);
         DataTable tblRunnerFiltered = accessOperations.GetOnlyNameRunner(_tbl);
-
+        public static DataTable _table3 = new DataTable();
         public RunnerList(Team team)
         {
             InitializeComponent();
@@ -39,14 +39,9 @@ namespace Biking
                 }
             }
             CategoriaComboBox.Items.Add(emptyItem);
-
         }
-
-        //public void FunData1(TextBox nome)
-        //{
-        //    nome.Text  = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-        //    //codice.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-        //}
+    
+    
 
         private void ReturnButon_Click(object sender, EventArgs e)
         {
@@ -65,32 +60,7 @@ namespace Biking
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            var atleta1Nome = _team.Nome1Team.Text.ToString();
-            var atleta2Nome = _team.Nome2Team.Text.ToString();
-            var atleta3Nome = _team.Nome3Team.Text.ToString();
-            var atleta4Nome = _team.Nome4Team.Text.ToString();
-
-            if (atleta1Nome == "")
-            {
-                _team.Nome1Team.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                _team.CodiceFCI1.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            }
-            else if (atleta2Nome == "")
-            {
-                _team.Nome2Team.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                _team.CodiceFCI2.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            }
-            else if (atleta3Nome == "")
-            {
-                _team.Nome3Team.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                _team.CodiceFCI3.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            }
-            else if (atleta4Nome == "")
-            {
-                _team.Nome4Team.Text = this.dataGridView1.CurrentRow.Cells[0].Value.ToString();
-                _team.CodiceFCI4.Text = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            }
-
+            _team.dataGridView1.Rows.Add($"{this.dataGridView1.CurrentRow.Cells[0].Value.ToString()}", $"{this.dataGridView1.CurrentRow.Cells[2].Value.ToString()}", $"{this.dataGridView1.CurrentRow.Cells[1].Value.ToString()}");
             this.Close();
         }
 
